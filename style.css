@@ -1,0 +1,209 @@
+:root {
+    --primary-color: #2563eb;
+    --primary-light: #eff6ff;
+    --text-main: #1f2937;
+    --text-muted: #4b5563;
+    --bg-main: #f8fafc;
+    --bg-card: #ffffff;
+    --border-color: #e2e8f0;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    color: var(--text-main);
+    background-color: var(--bg-main);
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+}
+
+.header-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+}
+
+.subtitle {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Main Content */
+main {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    min-height: 60vh;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
+
+.controls label {
+    font-weight: bold;
+    color: var(--text-muted);
+}
+
+.select-wrapper {
+    position: relative;
+}
+
+.select-wrapper::after {
+    content: "▼";
+    font-size: 0.8rem;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--primary-color);
+}
+
+select {
+    appearance: none;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 0.6rem 2.5rem 0.6rem 1rem;
+    font-size: 1rem;
+    color: var(--text-main);
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+/* Content Grid */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .content-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Card */
+.card {
+    background-color: var(--bg-card);
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-light);
+}
+
+.card-phase {
+    display: inline-block;
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    margin-bottom: 1rem;
+    align-self: flex-start;
+}
+
+.card-caution {
+    margin-bottom: 1.2rem;
+}
+
+.card-caution h3 {
+    font-size: 1.1rem;
+    color: #d97706; /* 警告色に近いオレンジ */
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.card-caution h3::before {
+    content: "⚠️";
+}
+
+.card-solution h3 {
+    font-size: 1.1rem;
+    color: #059669; /* 解決策を示す緑 */
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.card-solution h3::before {
+    content: "💡";
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: var(--text-main);
+    white-space: pre-wrap;
+}
+
+/* Empty State */
+.no-data {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-muted);
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    border: 1px dashed var(--border-color);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: auto;
+}

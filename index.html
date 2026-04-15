@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No.6_眺めてみようチェックリスト</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>No.6 眺めてみようチェックリスト</h1>
+            <p class="subtitle">プロジェクトマネージャー向け ベストプラクティス集</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="controls">
+            <label for="phase-select">フェーズ絞り込み:</label>
+            <div class="select-wrapper">
+                <select id="phase-select">
+                    <option value="すべて">すべてのフェーズ</option>
+                    <option value="プロジェクトの立ち上げ">プロジェクトの立ち上げ</option>
+                    <option value="プロジェクトの計画">プロジェクトの計画</option>
+                    <option value="プロジェクトの実行・監視">プロジェクトの実行・監視</option>
+                    <option value="プロジェクトの終結">プロジェクトの終結</option>
+                </select>
+            </div>
+        </section>
+
+        <section id="content-container" class="content-grid">
+            <!-- JavaScriptでカードが自動生成されます -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 PM Support Tools. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
