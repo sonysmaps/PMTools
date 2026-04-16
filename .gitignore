@@ -1,0 +1,10 @@
+# OS/Temp
+.DS_Store
+Thumbs.db
+*.tmp
+
+# App generated data
+checklist_*.json
+
+# Management scripts
+push_to_github.ps1

@@ -15,6 +15,46 @@
     </header>
 
     <main>
+        <section class="admin-controls">
+            <button id="add-item-toggle" class="btn btn-primary">➕ 新規チェックリストの追加</button>
+            <div class="file-actions">
+                <button id="export-json" class="btn btn-secondary">💾 チェックリストの保存</button>
+                <label for="import-json" class="btn btn-secondary">
+                    📂 チェックリストを読み込む
+                    <input type="file" id="import-json" accept=".json" hidden>
+                </label>
+            </div>
+        </section>
+
+        <!-- 新規追加フォーム (初期は非表示) -->
+        <section id="add-form-wrapper" class="add-form-section hidden">
+            <div class="form-card">
+                <h3>項目の新規追加</h3>
+                <form id="checklist-form">
+                    <div class="form-group">
+                        <label for="form-phase">フェーズ:</label>
+                        <select id="form-phase" required>
+                            <option value="プロジェクトの立ち上げ">プロジェクトの立ち上げ</option>
+                            <option value="プロジェクトの計画">プロジェクトの計画</option>
+                            <option value="プロジェクトの実行・監視">プロジェクトの実行・監視</option>
+                            <option value="プロジェクトの終結">プロジェクトの終結</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="form-caution">注意すべき事項:</label>
+                        <textarea id="form-caution" rows="3" required placeholder="具体的な懸念点やリスクを入力してください"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="form-solution">その対策:</label>
+                        <textarea id="form-solution" rows="3" required placeholder="解決策やベストプラクティスを入力してください"></textarea>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="submit" class="btn btn-success">リストに追加する</button>
+                        <button type="button" id="form-cancel" class="btn btn-outline">キャンセル</button>
+                    </div>
+                </form>
+            </div>
+        </section>
         <section class="controls">
             <label for="phase-select">フェーズ絞り込み:</label>
             <div class="select-wrapper">
@@ -26,9 +66,16 @@
                     <option value="プロジェクトの終結">プロジェクトの終結</option>
                 </select>
             </div>
+            <div class="filter-toggle">
+                <label class="switch">
+                    <input type="checkbox" id="hide-unchecked">
+                    <span class="slider round"></span>
+                </label>
+                <span class="toggle-label">未チェックを隠す</span>
+            </div>
         </section>
 
-        <section id="content-container" class="content-grid">
+        <section id="content-container" class="content-list">
             <!-- JavaScriptでカードが自動生成されます -->
         </section>
     </main>
